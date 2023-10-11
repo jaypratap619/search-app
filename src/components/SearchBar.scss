@@ -1,0 +1,45 @@
+// SearchBar.scss
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    flex: 1;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px 0 0 5px;
+    border-right: none;
+    /* Remove the right border */
+}
+
+// SearchBar.scss
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    /* Remove the border */
+    padding: 10px;
+    border-radius: 5px 0 0 5px;
+    border-right: none;
+    /* Remove the right border */
+}
+
+.search-button {
+    border: 0px solid #ccc;
+    background: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    padding: 10px;
+
+    img {
+        width: 20px; // Adjust the width of the search icon as needed
+        height: 20px; // Adjust the height of the search icon as needed
+    }
+}
