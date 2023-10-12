@@ -1,14 +1,14 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import searchIcon from '../assets/images/search.svg';
 import './SearchBar.scss'; // Create a CSS file for styling
 
 interface SearchBarProps {
-    onSearchSubmit: (value: string) => void;
+    onSearchSubmit: (value: string) => void,
+    handleSearchClick?: () => void,
+    widthClass: string
 }
 
-const SearchBar: React.FC<SearchBarProps> = ({ onSearchSubmit }) => {
+const SearchBar: React.FC<SearchBarProps> = ({ onSearchSubmit, widthClass, handleSearchClick }) => {
     const [val, setVal] = useState<string>('');
 
     const onInputChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -21,26 +21,25 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearchSubmit }) => {
     };
 
     return (
-        <div>
-            <div className="row">
-                <div className="col-8">
-                    <form onSubmit={onFormSubmit} className='d-flex'>
-                        <div className="search-container">
-                            <input
-                                className="form-control search-input"
-                                type="search"
-                                onChange={onInputChange}
-                                value={val}
-                                placeholder="Search for photos"
-                                aria-label="Search"
-                            />
-                            <button className='search-button' type="submit">
-                                <img src={searchIcon} alt="Search" />
-                            </button>
-                        </div>
-                    </form>
+        <div className={widthClass}>
+            <form onSubmit={onFormSubmit} className='d-flex'>
+                <div className="search-container">
+                    <input
+                        className="search-input"
+                        type="search"
+                        onChange={onInputChange}
+                        value={val}
+                        placeholder="Search"
+                        aria-label="Search"
+                        onClick={() => {
+                            if (handleSearchClick) handleSearchClick()
+                        }}
+                    />
+                    <button className='search-button' type="submit">
+                        <img src={searchIcon} alt="Search" />
+                    </button>
                 </div>
-            </div>
+            </form>
         </div>
     );
 };

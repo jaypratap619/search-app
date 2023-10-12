@@ -1,0 +1,73 @@
+.card-container {
+    // Your existing card styles here
+   
+
+
+    .card-image-container {
+        position: relative;
+      
+    }
+
+    .wishlist-toggle {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        /* Initially transparent */
+        cursor: pointer;
+        transition: color 0.3s;
+        z-index: 1;
+    }
+
+    .wishlist-toggle.active {
+        color: red; /* Color changes to red when active */
+    }
+
+    .discount-detail {
+
+        color: rgba(0, 0, 0, 0.40);
+        font-family: Inter;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        text-decoration-line: line-through;
+
+    }
+
+    .real-price {
+        color: #6D84FF;
+        font-family: Inter;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .card-img-top {
+        width: 100%;
+        height: auto;
+        object-fit: fill;
+    }
+
+    .view-product-link {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+        background: rgba(33, 164, 251, 0.87);
+        color: white;
+        text-decoration: none;
+        transition: background 0.3s;
+        opacity: 0;
+    }
+
+
+    .card-image-container:hover .view-product-link {
+        opacity: 1;
+    }
+
+    .view-product-link:hover {
+        background: blue;
+    }
+}
